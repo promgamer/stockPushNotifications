@@ -29,7 +29,11 @@ module.exports.connections = {
   *                                                                          *
   ***************************************************************************/
   localDiskDb: {
-    adapter: 'sails-disk'
+    adapter: 'sails-postgresql',
+    host: 'localhost',
+    user: 'postgres',
+    password: 'barcelos',
+    database: 'CMOV2'
   },
 
   /***************************************************************************
