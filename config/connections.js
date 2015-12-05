@@ -41,7 +41,7 @@ module.exports.connections = {
     host: 'localhost',
     user: 'pguser',
     password: 'teste',
-    database: 'CMOV2'
+    database: 'cmov2'
   },
 
   /***************************************************************************
