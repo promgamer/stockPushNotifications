@@ -3,7 +3,8 @@ var wns = require('wns');
 
 var options = {
   client_id: 'ms-app://s-1-15-2-7517944-2102956592-847385009-1620487831-2475186946-440704142-3222778260',
-  client_secret: 'cdJpJ6kmSPpAYBPRECs2mFtYvuTZBGyy'
+  client_secret: 'cdJpJ6kmSPpAYBPRECs2mFtYvuTZBGyy',
+  headers: 'X-WNS-TTL: 610'
 };
 
 
@@ -66,6 +67,12 @@ var reloadData = function(){
             var realValue = stockHash[entry.name];
 
             // tile notification
+            wns.sendTileSquareText02(entry.owner.channelURL, entry.name, realValue, options, function (error, result) {
+              if (error)
+                console.error(error);
+              else
+                console.log(result);
+            });
 
             if( realValue > entry.max || realValue < entry.min){
               //toast notification
