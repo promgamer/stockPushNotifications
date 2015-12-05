@@ -16,7 +16,8 @@ module.exports = {
 
     phoneID: {
       type: 'string',
-      required: true
+      required: true,
+      unique: true
     },
 
     stocks:{
