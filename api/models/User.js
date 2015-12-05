@@ -25,6 +25,14 @@ module.exports = {
       via: 'owner'
     }
 
+  },
+
+  beforeCreate: function(user, cb) {
+    User.destroy({phoneID: user.phoneID}).exec(function deleteCB(err) {
+      console.log('The record has been deleted');
+    });
+
+    cb(null, user);
   }
 };
 
