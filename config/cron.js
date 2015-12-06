@@ -4,7 +4,7 @@ var wns = require('wns');
 var options = {
   client_id: 'ms-app://s-1-15-2-7517944-2102956592-847385009-1620487831-2475186946-440704142-3222778260',
   client_secret: 'cdJpJ6kmSPpAYBPRECs2mFtYvuTZBGyy',
-  headers: 'X-WNS-TTL: 610'
+  headers: 'X-WNS-TTL: 60'
 };
 
 
@@ -78,7 +78,7 @@ var reloadData = function(){
               //toast notification
               console.log("ENVIAR NOTIFICACAO: " + entry.name + " PARA: " + entry.owner.channelURL);
 
-              wns.sendToastText02(entry.owner.channelURL, "Pediu para ser notificado sobre " + entry.name +":", "Valor atual: " + realValue , options, function (error, result) {
+              wns.sendToastText02(entry.owner.channelURL, entry.name, "Valor atual: " + realValue , options, function (error, result) {
                 if (error)
                   console.error(error);
                 else
