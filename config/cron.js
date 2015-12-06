@@ -67,10 +67,10 @@ var reloadData = function(){
             var realValue = stockHash[entry.name];
             var now = new Date();
             var datepart1 = now.getHours() + "h:" + now.getMinutes() + "m";
-            var datepart2 = now.getDay() + "/" + now.getMonth() + now.getFullYear();
+            var datepart2 = now.getDay() + "/" + now.getMonth() + "/" + now.getFullYear();
 
             // tile notification
-            wns.sendTileSquareText01(entry.owner.channelURL, entry.name, "$" + realValue, datepart1, datepart2, options, function (error, result) {
+            wns.sendTileSquareText01(entry.owner.channelURL, entry.name, realValue + " $", datepart1, datepart2, options, function (error, result) {
               if (error)
                 console.error(error);
               else
